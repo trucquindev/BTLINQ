@@ -20,6 +20,9 @@ class Program
                 case 2:
                     Bai2();
                     break;
+                case 3:
+                    Bai3();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -46,5 +49,13 @@ class Program
         var greaterThanFive = numbers.Where(n => n > 5);
         PrintProfile();
         Console.WriteLine("Số lớn hơn 5: " + string.Join(", ", greaterThanFive));
+    }
+
+    static void Bai3()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+        var sortedNumbers = numbers.OrderBy(n => n);
+        PrintProfile();
+        Console.WriteLine("Số theo thứ tự tăng dần: " + string.Join(", ", sortedNumbers));
     }
 }
