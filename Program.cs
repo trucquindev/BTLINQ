@@ -18,7 +18,7 @@ class Program
                     Bai1();
                     break;
                 case 2:
-                    // Gọi hàm giải bài 2
+                    Bai2();
                     break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
@@ -38,5 +38,13 @@ class Program
         var evenNumber = numbers.Where(n => n % 2 == 0);
         PrintProfile();
         Console.WriteLine("Số chẵn: " + string.Join(", ", evenNumber));
+    }
+
+    static void Bai2()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+        var greaterThanFive = numbers.Where(n => n > 5);
+        PrintProfile();
+        Console.WriteLine("Số lớn hơn 5: " + string.Join(", ", greaterThanFive));
     }
 }
