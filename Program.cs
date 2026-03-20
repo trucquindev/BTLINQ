@@ -51,6 +51,9 @@ class Program
                 case 10:
                     Bai10();
                     break;
+                case 11:
+                    Bai11();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -176,5 +179,20 @@ class Program
         {
             Console.WriteLine($"{student.Name} - Điểm: {student.Score}");
         }
+    }
+
+    static void Bai11()
+    {
+        var students = new List<Student>()
+    {
+        new Student { Id = 1, Name = "An", Score = 8 },
+        new Student { Id = 2, Name = "Binh", Score = 6 },
+        new Student { Id = 3, Name = "Chi", Score = 9 },
+        new Student { Id = 4, Name = "Dung", Score = 7 }
+    };
+
+        var sortedStudents = students.OrderByDescending(n => n.Score).FirstOrDefault();
+        PrintProfile();
+        Console.WriteLine($"{sortedStudents.Name} - Điểm: {sortedStudents.Score}");
     }
 }
