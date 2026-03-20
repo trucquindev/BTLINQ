@@ -26,6 +26,9 @@ class Program
                 case 4:
                     Bai4();
                     break;
+                case 5:
+                    Bai5();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -68,5 +71,13 @@ class Program
         var sortedNumbers = numbers.OrderByDescending(n => n);
         PrintProfile();
         Console.WriteLine("Số theo thứ tự giảm dần: " + string.Join(", ", sortedNumbers));
+    }
+
+    static void Bai5()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+        var squaredNumbers = numbers.Select(n => n * n);
+        PrintProfile();
+        Console.WriteLine("Bình phương của các số: " + string.Join(", ", squaredNumbers));
     }
 }
