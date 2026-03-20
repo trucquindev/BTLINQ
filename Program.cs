@@ -69,6 +69,9 @@ class Program
                 case 16:
                     Bai16();
                     break;
+                case 17:
+                    Bai17();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -274,5 +277,19 @@ class Program
         var sum = numbers.Sum();
         PrintProfile();
         Console.WriteLine("Tổng các số: " + sum);
+    }
+
+    static void Bai17()
+    {
+        var students = new List<Student>()
+    {
+        new Student { Id = 1, Name = "An", Score = 8 },
+        new Student { Id = 2, Name = "Binh", Score = 6 },
+        new Student { Id = 3, Name = "Chi", Score = 9 },
+        new Student { Id = 4, Name = "Dung", Score = 7 }
+    };
+        var average = students.Average(s => s.Score);
+        PrintProfile();
+        Console.WriteLine("Trung bình cộng của các điểm: " + average);
     }
 }
