@@ -23,6 +23,9 @@ class Program
                 case 3:
                     Bai3();
                     break;
+                case 4:
+                    Bai4();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -57,5 +60,13 @@ class Program
         var sortedNumbers = numbers.OrderBy(n => n);
         PrintProfile();
         Console.WriteLine("Số theo thứ tự tăng dần: " + string.Join(", ", sortedNumbers));
+    }
+
+    static void Bai4()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+        var sortedNumbers = numbers.OrderByDescending(n => n);
+        PrintProfile();
+        Console.WriteLine("Số theo thứ tự giảm dần: " + string.Join(", ", sortedNumbers));
     }
 }
