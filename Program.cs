@@ -57,6 +57,9 @@ class Program
                 case 12:
                     Bai12();
                     break;
+                case 13:
+                    Bai13();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -212,5 +215,20 @@ class Program
         var countStudentsThanSeven = students.Count(s => s.Score > 7);
         PrintProfile();
         Console.WriteLine("Số lượng sinh viên có điểm lớn hơn 7: " + countStudentsThanSeven);
+    }
+
+    static void Bai13()
+    {
+        var students = new List<Student>()
+    {
+        new Student { Id = 1, Name = "An", Score = 8 },
+        new Student { Id = 2, Name = "Binh", Score = 6 },
+        new Student { Id = 3, Name = "Chi", Score = 9 },
+        new Student { Id = 4, Name = "Dung", Score = 7 }
+    };
+
+        var theFirstStudentThanSeven = students.Where(s => s.Score > 7).FirstOrDefault();
+        PrintProfile();
+        Console.WriteLine($"Sinh viên có điểm lớn hơn 7: {theFirstStudentThanSeven.Name} - Điểm: {theFirstStudentThanSeven.Score}");
     }
 }
