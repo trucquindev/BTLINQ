@@ -60,6 +60,9 @@ class Program
                 case 13:
                     Bai13();
                     break;
+                case 14:
+                    Bai14();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -230,5 +233,24 @@ class Program
         var theFirstStudentThanSeven = students.Where(s => s.Score > 7).FirstOrDefault();
         PrintProfile();
         Console.WriteLine($"Sinh viên có điểm lớn hơn 7: {theFirstStudentThanSeven.Name} - Điểm: {theFirstStudentThanSeven.Score}");
+    }
+
+    static void Bai14()
+    {
+        var students = new List<Student>()
+    {
+        new Student { Id = 1, Name = "An", Score = 8 },
+        new Student { Id = 2, Name = "Binh", Score = 6 },
+        new Student { Id = 3, Name = "Chi", Score = 9 },
+        new Student { Id = 4, Name = "Dung", Score = 7 }
+    };
+
+        var failStudents = students.Where(s => s.Score < 5);
+        PrintProfile();
+        Console.WriteLine("Sinh viên trượt:");
+        foreach (var student in failStudents)
+        {
+            Console.WriteLine($"{student.Name} - Điểm: {student.Score}");
+        }
     }
 }
