@@ -75,6 +75,9 @@ class Program
                 case 18:
                     Bai18();
                     break;
+                case 19:
+                    Bai19();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -315,5 +318,16 @@ class Program
                 Console.WriteLine($"{student.Name} - Điểm: {student.Score}");
             }
         }
+    }
+
+    static void Bai19()
+    {
+        List<int> numbers = new List<int> { 1, 2, 2, 3, 4, 4, 5, 5, 4, 3, 2, 4, 3, 5, 2, 3 };
+        var mostFrequentNumber = numbers.GroupBy(n => n)
+                                        .OrderByDescending(g => g.Count())
+                                        .FirstOrDefault()?.Key;
+        PrintProfile();
+        Console.WriteLine("Số xuất hiện nhiều nhất: " + mostFrequentNumber);
+
     }
 }
