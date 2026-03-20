@@ -16,7 +16,6 @@ class Program
         {
             Console.WriteLine("Chọn bài tập (1-20) hoặc 0 để thoát:");
             int choice = int.Parse(Console.ReadLine());
-
             if (choice == 0)
                 break;
 
@@ -45,6 +44,12 @@ class Program
                     break;
                 case 8:
                     Bai8();
+                    break;
+                case 9:
+                    Bai9();
+                    break;
+                case 10:
+                    Bai10();
                     break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
@@ -153,5 +158,23 @@ class Program
         var studentNames = students.Select(s => s.Name);
         PrintProfile();
         Console.WriteLine("Danh sách tên sinh viên: " + string.Join(", ", studentNames));
+    }
+
+    static void Bai10()
+    {
+        var students = new List<Student>()
+    {
+        new Student { Id = 1, Name = "An", Score = 8 },
+        new Student { Id = 2, Name = "Binh", Score = 6 },
+        new Student { Id = 3, Name = "Chi", Score = 9 },
+        new Student { Id = 4, Name = "Dung", Score = 7 }
+    };
+
+        var sortedStudents = students.OrderByDescending(n => n.Score);
+        PrintProfile();
+        foreach (var student in sortedStudents)
+        {
+            Console.WriteLine($"{student.Name} - Điểm: {student.Score}");
+        }
     }
 }
