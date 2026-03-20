@@ -32,6 +32,9 @@ class Program
                 case 6:
                     Bai6();
                     break;
+                case 7:
+                    Bai7();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -90,5 +93,20 @@ class Program
         var evenNumber = numbers.Where(n => n % 2 == 0).Count();
         PrintProfile();
         Console.WriteLine("Số lượng số chẵn: " + evenNumber);
+    }
+
+    static void Bai7()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+        var numberThanTen = numbers.Where(n => n > 10);
+        PrintProfile();
+        if (numberThanTen.Any())
+        {
+            Console.WriteLine("Số lớn hơn 10: " + string.Join(", ", numberThanTen));
+        }
+        else
+        {
+            Console.WriteLine("Không có số nào lớn hơn 10.");
+        }
     }
 }
