@@ -66,6 +66,9 @@ class Program
                 case 15:
                     Bai15();
                     break;
+                case 16:
+                    Bai16();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -263,5 +266,13 @@ class Program
         var distinctNumbers = numbers.Distinct();
         PrintProfile();
         Console.WriteLine("Các số khác nhau trong danh sách: " + string.Join(", ", distinctNumbers));
+    }
+
+    static void Bai16()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+        var sum = numbers.Sum();
+        PrintProfile();
+        Console.WriteLine("Tổng các số: " + sum);
     }
 }
