@@ -1,5 +1,13 @@
 ﻿using System;
 
+class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public double Score { get; set; }
+}
+
+
 class Program
 {
     static void Main(string[] args)
@@ -34,6 +42,9 @@ class Program
                     break;
                 case 7:
                     Bai7();
+                    break;
+                case 8:
+                    Bai8();
                     break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
@@ -109,4 +120,25 @@ class Program
             Console.WriteLine("Không có số nào lớn hơn 10.");
         }
     }
+
+    static void Bai8()
+    {
+        var students = new List<Student>()
+    {
+        new Student { Id = 1, Name = "An", Score = 8 },
+        new Student { Id = 2, Name = "Binh", Score = 6 },
+        new Student { Id = 3, Name = "Chi", Score = 9 },
+        new Student { Id = 4, Name = "Dung", Score = 7 }
+    };
+
+        var goodStudents = students.Where(s => s.Score >= 8);
+        PrintProfile();
+        Console.WriteLine("Sinh viên giỏi:");
+        foreach (var student in goodStudents)
+        {
+            Console.WriteLine($"{student.Name} - Điểm: {student.Score}");
+        }
+    }
+
+
 }
