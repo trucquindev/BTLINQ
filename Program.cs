@@ -29,6 +29,9 @@ class Program
                 case 5:
                     Bai5();
                     break;
+                case 6:
+                    Bai6();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -79,5 +82,13 @@ class Program
         var squaredNumbers = numbers.Select(n => n * n);
         PrintProfile();
         Console.WriteLine("Bình phương của các số: " + string.Join(", ", squaredNumbers));
+    }
+
+    static void Bai6()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+        var evenNumber = numbers.Where(n => n % 2 == 0).Count();
+        PrintProfile();
+        Console.WriteLine("Số lượng số chẵn: " + evenNumber);
     }
 }
