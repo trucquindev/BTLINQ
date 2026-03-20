@@ -78,6 +78,9 @@ class Program
                 case 19:
                     Bai19();
                     break;
+                case 20:
+                    Bai20();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -329,5 +332,24 @@ class Program
         PrintProfile();
         Console.WriteLine("Số xuất hiện nhiều nhất: " + mostFrequentNumber);
 
+    }
+
+    static void Bai20()
+    {
+        var students = new List<Student>()
+    {
+        new Student { Id = 1, Name = "An", Score = 8 },
+        new Student { Id = 2, Name = "Binh", Score = 6 },
+        new Student { Id = 3, Name = "Chi", Score = 9 },
+        new Student { Id = 4, Name = "Dung", Score = 7 }
+    };
+
+        var topThreeStudents = students.OrderByDescending(s => s.Score).Take(3);
+        PrintProfile();
+        Console.WriteLine("Top 3 sinh viên có điểm cao nhất:");
+        foreach (var student in topThreeStudents)
+        {
+            Console.WriteLine($"{student.Name} - Điểm: {student.Score}");
+        }
     }
 }
