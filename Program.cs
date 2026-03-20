@@ -72,6 +72,9 @@ class Program
                 case 17:
                     Bai17();
                     break;
+                case 18:
+                    Bai18();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -291,5 +294,26 @@ class Program
         var average = students.Average(s => s.Score);
         PrintProfile();
         Console.WriteLine("Trung bình cộng của các điểm: " + average);
+    }
+
+    static void Bai18()
+    {
+        var students = new List<Student>()
+    {
+        new Student { Id = 1, Name = "An", Score = 8 },
+        new Student { Id = 2, Name = "Binh", Score = 6 },
+        new Student { Id = 3, Name = "Chi", Score = 5},
+        new Student { Id = 4, Name = "Dung", Score = 7 }
+    };
+        var groupByScore = students.GroupBy(s => s.Score >= 8 ? "Giỏi" : s.Score >= 6 ? "Khá" : "Trung bình");
+        PrintProfile();
+        foreach (var group in groupByScore)
+        {
+            Console.WriteLine($"Nhóm {group.Key}:");
+            foreach (var student in group)
+            {
+                Console.WriteLine($"{student.Name} - Điểm: {student.Score}");
+            }
+        }
     }
 }
