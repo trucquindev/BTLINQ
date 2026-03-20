@@ -63,6 +63,9 @@ class Program
                 case 14:
                     Bai14();
                     break;
+                case 15:
+                    Bai15();
+                    break;
                 default:
                     Console.WriteLine("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
                     break;
@@ -252,5 +255,13 @@ class Program
         {
             Console.WriteLine($"{student.Name} - Điểm: {student.Score}");
         }
+    }
+
+    static void Bai15()
+    {
+        List<int> numbers = new List<int> { 1, 2, 2, 3, 4, 4, 5 };
+        var distinctNumbers = numbers.Distinct();
+        PrintProfile();
+        Console.WriteLine("Các số khác nhau trong danh sách: " + string.Join(", ", distinctNumbers));
     }
 }
